@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "priority-chat",
+	"version": "${version}",
+	"name": "Priority Chat",
+	"description": "Minimalist chat overlay that stays out of your way. Mark players as favourites to highlight their messages — never miss what matters",
+	"authors": [
+		"Liximus!"
+	],
+	"contact": {
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/priority-chat/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.listraind.prioritychat.PriorityChat"
+		],
+		"client": [
+			"com.listraind.prioritychat.PriorityChatClient"
+		],
+		"modmenu": [
+			"com.listraind.prioritychat.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"priority-chat.mixins.json",
+		{
+			"config": "priority-chat.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*",
+		"modmenu": "*",
+		"yet_another_config_lib_v3": ">=3.8.1+1.21.6-fabric"
+	},
+	"suggests": {
+	}
+}
